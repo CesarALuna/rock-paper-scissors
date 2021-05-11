@@ -79,7 +79,7 @@ header > h1 {
 }
 
 .choice:hover {
-    border: 5px solid greenyellow;
+/*    border: 5px solid greenyellow; */
     cursor: pointer;
     transform: scale(1.2);
 }
@@ -89,4 +89,19 @@ header > h1 {
     color: #eee;
     font-family: monospace;
     font-size: 35px;
+}
+
+.green-glow {
+    border: 5px solid greenyellow;
+    box-shadow: 0 0 15px greenyellow;
+}
+
+.red-glow {
+    border: 5px solid crimson;
+    box-shadow: 0 0 15px crimson;
+}
+
+.gray-glow {
+    border: 5px solid gray;
+    box-shadow: 0 0 15px gray; 
 }
