@@ -7,6 +7,7 @@ A project incorporating simple HTML, CSS, and Javascript to create a browser-bas
 ## Topics Covered
     Dynamic HTML + CSS styling
     Javascript constants, variables, functions
+    DOM manipulation
     Best git practices
     Maintaining a GitHub repository
 
