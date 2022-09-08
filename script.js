@@ -1,6 +1,20 @@
+function getPlayerChoice() {
+  playerSelection = prompt("Rock, paper, scissors?").toLocaleLowerCase();
+  if (
+    playerSelection === "rock" ||
+    playerSelection === "paper" ||
+    playerSelection === "scissors"
+  ) {
+    console.log("You chose " + `${playerSelection}`);
+    getComputerChoice();
+    console.log("The computer chose " + `${computerSelection}`);
+  } else {
+    console.log("Please make a valid selection");
+    location.reload();
+  }
+}
+
 function getComputerChoice() {
-  // will randomly generate a choice for computer
-  // code go here :)
   let choice = Math.floor(Math.random() * 3);
   if (choice === 0) {
     computerSelection = "rock";
@@ -8,10 +22,47 @@ function getComputerChoice() {
     computerSelection = "paper";
   } else if (choice === 2) {
     computerSelection = "scissors";
-  } else {
-    print("There has been some kind of mistake lol");
   }
-  console.log(computerSelection);
 }
 
-// function oneRound(playerSelection, computerSelection) {}
+function playRound(playerSelection, computerSelection) {
+  if (playerSelection === computerSelection) {
+    console.log("Tie!");
+  }
+  if (playerSelection === "rock" && computerSelection === "scissors") {
+    return playerScore++;
+    console.log("You won!");
+  } else if (playerSelection === "rock" && computerSelection === "paper") {
+    return computerScore++;
+    console.log("You lose!");
+  }
+  if (playerSelection === "paper" && computerSelection === "rock") {
+    return playerScore++;
+    console.log("You won!");
+  } else if (playerSelection === "paper" && computerSelection === "scissors") {
+    return computerScore++;
+    console.log("You lose!");
+  }
+  if (playerSelection === "scissors" && computerSelection === "paper") {
+    return playerScore++;
+    console.log("You won!");
+  } else if (playerSelection === "scissors" && computerSelection === "rock") {
+    return computerScore++;
+    console.log("You lose!");
+  }
+}
+
+function game() {
+  playerScore = 0;
+  computerScore = 0;
+
+  for (let i = 0; i < 5; i++) {
+    getPlayerChoice();
+    playRound(playerSelection, computerSelection);
+    console.log(
+      `Player Score: ${playerScore}\nComputer Score: ${computerScore}`
+    );
+  }
+}
+
+game();
