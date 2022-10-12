@@ -1,19 +1,24 @@
-function getPlayerChoice() {
-  playerSelection = prompt("Rock, paper, scissors?").toLocaleLowerCase();
-  if (
-    playerSelection === "rock" ||
-    playerSelection === "paper" ||
-    playerSelection === "scissors"
-  ) {
-    console.log("You chose " + `${playerSelection}`);
-    getComputerChoice();
-    console.log("The computer chose " + `${computerSelection}`);
-  } else {
-    console.log("Please make a valid selection");
-    location.reload();
-  }
-}
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
+rock.addEventListener("click", playRound);
+
+// function getPlayerChoice() {
+//   playerSelection = prompt("Rock, paper, scissors?").toLocaleLowerCase();
+//   if (
+//     playerSelection === "rock" ||
+//     playerSelection === "paper" ||
+//     playerSelection === "scissors"
+//   ) {
+//     console.log("You chose " + `${playerSelection}`);
+//     getComputerChoice();
+//     console.log("The computer chose " + `${computerSelection}`);
+//   } else {
+//     console.log("Please make a valid selection");
+//     location.reload();
+//   }
+// }
 function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3);
   if (choice === 0) {
@@ -23,9 +28,15 @@ function getComputerChoice() {
   } else if (choice === 2) {
     computerSelection = "scissors";
   }
+  return computerSelection;
 }
 
 function playRound(playerSelection, computerSelection) {
+  playerSelection = this.id;
+
+  console.log(playerSelection);
+  console.log(computerSelection);
+
   if (playerSelection === computerSelection) {
     console.log("Tie!");
   }
@@ -56,13 +67,13 @@ function game() {
   playerScore = 0;
   computerScore = 0;
 
-  for (let i = 0; i < 5; i++) {
-    getPlayerChoice();
-    playRound(playerSelection, computerSelection);
-    console.log(
-      `Player Score: ${playerScore}\nComputer Score: ${computerScore}`
-    );
-  }
+  // for (let i = 0; i < 5; i++) {
+  //   getPlayerChoice();
+  //   playRound(playerSelection, computerSelection);
+  //   console.log(
+  //     `Player Score: ${playerScore}\nComputer Score: ${computerScore}`
+  //   );
+  // }
 }
 
 game();
