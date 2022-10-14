@@ -20,20 +20,35 @@ function win(user, computer) {
   userScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
+  const userChoice_div = document.getElementById(user);
   result_p.innerHTML = `${user} beats ${computer}. You win!`;
+  document.getElementById(user).classList.add("green-glow");
+  setTimeout(() => {
+    userChoice_div.classList.remove("green-glow");
+  }, 300);
 }
 
 function lose(user, computer) {
   computerScore++;
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
+  const userChoice_div = document.getElementById(user);
   result_p.innerHTML = `${computer} beats ${user}. Computer win!`;
+  document.getElementById(user).classList.add("red-glow");
+  setTimeout(() => {
+    userChoice_div.classList.remove("red-glow");
+  }, 300);
 }
 
 function draw(user, computer) {
   userScore_span.innerHTML = userScore;
   computerScore_span.innerHTML = computerScore;
+  const userChoice_div = document.getElementById(user);
   result_p.innerHTML = `You both picked ${user}. It's a tie!`;
+  document.getElementById(user).classList.add("gray-glow");
+  setTimeout(() => {
+    userChoice_div.classList.remove("gray-glow");
+  }, 300);
 }
 
 function game(userChoice) {
@@ -59,6 +74,7 @@ function game(userChoice) {
       break;
   }
 }
+
 function main() {
   // return the selected div id as the userChoice variable
   rock_div.addEventListener("click", () => {
