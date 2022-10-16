@@ -56,7 +56,7 @@ function game(userChoice) {
   switch (userChoice + computerChoice) {
     case "rockscissors":
     case "paperrock":
-    case "scissorpaper":
+    case "scissorspaper":
       win(userChoice, computerChoice);
       console.log("USER WINS");
       break;
