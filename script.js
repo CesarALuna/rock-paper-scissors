@@ -54,13 +54,13 @@ function draw(user, computer) {
 function game(userChoice) {
   const computerChoice = getComputerChoice();
   switch (userChoice + computerChoice) {
-    case "rockpaper":
+    case "rockscissors":
     case "paperrock":
-    case "scissorspaper":
+    case "scissorpaper":
       win(userChoice, computerChoice);
       console.log("USER WINS");
       break;
-    case "paperrock":
+    case "rockpaper":
     case "paperscissors":
     case "scissorsrock":
       lose(userChoice, computerChoice);
